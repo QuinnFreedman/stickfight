@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html style="cursor:default;">
+<head>
+    <style>
+    *{
+        padding:0px;
+        margin:0px;
+        background-color:DimGray;
+        color: LightGray;
+    }
+    canvas{
+        margin: 10px;
+        background: url(background.png);
+        image-rendering: optimizeSpeed;             /* Older versions of FF          */
+        image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+        image-rendering: -webkit-optimize-contrast; /* Safari                        */
+        image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+        image-rendering: pixelated;                 /* Awesome future-browsers       */
+        -ms-interpolation-mode: nearest-neighbor;   /* IE 							 */
+        -ms-transform-origin: 50% 0%; /* IE 9 */
+        -webkit-transform-origin: 50% 0%; /* Chrome, Safari, Opera */
+        transform-origin: 50% 0%;
+        -ms-transform: scale(2,2); /* IE 9 */
+        -webkit-transform: scale(1,1); /* Safari */
+        transform: scale(1,1);
+    }
+    #container{
+        display:none;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    </style>
+    <title>Stick Fight</title>
+    <script type="text/javascript" src="gamepad.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+</head>
+<body  onKeyDown="keyDown(event)" onKeyUp="keyUp(event)">
+    <center>
+        <div id="loading" style="font-size:24px;padding:100px;">
+            Loading...
+        </div>
+        <div id="container">
+            <canvas id="canvas" style="border: 1px solid black;display:block"></canvas>
+            <div id="controls">
+                <p style="clear:both;padding:5px;">Controls:</p>
+                <table style = "float:left;padding:5px;">
+                    <tr>
+                        <td>
+                            <pre>&nbsp;W&nbsp;&nbsp;<br>ASD</pre>
+                        </td>
+                        <td>
+                            movement
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&nbsp;C&nbsp;&nbsp;</pre>
+                        </td>
+                        <td>
+                            block
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&nbsp;V&nbsp;&nbsp;</pre>
+                        </td>
+                        <td>
+                            punch/special
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&nbsp;B&nbsp;&nbsp;</pre>
+                        </td>
+                        <td>
+                            kick
+                        </td>
+                    </tr>
+                </table>
+                <table style = "float:right;padding:5px;">
+                    <tr>
+                        <td>
+                            <pre>&nbsp;&#9650;&nbsp;&nbsp;<br>&#9664;&#9660;&#9654;&nbsp;</pre>
+                        </td>
+                        <td>
+                            movement
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&nbsp;M&nbsp;&nbsp;</pre>
+                        </td>
+                        <td>
+                            block
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&nbsp;,&nbsp;&nbsp;</pre>
+                        </td>
+                        <td>
+                            punch/special
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>&nbsp;.&nbsp;&nbsp;</pre>
+                        </td>
+                        <td>
+                            kick
+                        </td>
+                    </tr>
+                </table>
+                <a href="javascript:toggleFullScreen()">fullscreen</a>
+            </div>
+        <div>
+    </center>
+    <img src="background.png" style="display:none;"/>
+</body>
+</html>
